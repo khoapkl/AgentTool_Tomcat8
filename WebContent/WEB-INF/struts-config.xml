@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<form-beans>
+
+	</form-beans>
+	
+	<global-forwards>
+        <forward name="agenttool.customer.login" path="/login.do" redirect="true" />
+        <forward name="agenttool.session_timeout" path="/authenticate.do" redirect="true" />
+        <forward name="error.page.view" path="/html/error.jsp" redirect="true" />
+        <forward name="agenttool.ship_report.export.exel" path="/html/jsp/exportExcel.jsp" />
+        <forward name="agenttool.shopper_view" path="agenttool.shopper_view"/>
+    </global-forwards>
+
+	<!-- =================================== Action Mapping Definitions -->
+
+	<action-mappings type="org.apache.struts.config.SecureActionConfig">
+		    <!--
+        security setup
+        -->
+        <action 
+			path="/security_setup"  
+			validate="false"
+			type="com.dell.enterprise.agenttool.actions.SecuritySetup"
+			parameter="method">	
+			<forward name="agenttool.securitySetup" path="agenttools.securitySetup"/>
+			<forward name="agenttool.agentSetup" path="agenttools.agentSetup" />	
+		</action>
+		 <action 
+			path="/change_password"  
+			validate="false"
+			type="com.dell.enterprise.agenttool.actions.ChangePassword"
+			parameter="method">	
+			<forward name="agenttool.changePassword" path="agenttools.changePassword"/>
+			<forward name="agenttool.updatePassword" path="agenttools.changePassword"/>
+			<forward name="agenttool.login" path="/authenticate.do?method=login"/>
+		</action>
+		<action 
+			path="/searchProduct" 
+			validate="false"
+			input="agenttools.searchProduct"
+			type="com.dell.enterprise.agenttool.actions.SearchProduct"
+			parameter="method">
+			<forward name="agenttool.search.page" path="agenttools.searchProduct" />
+			<forward name="agenttool.search.results" path="/html/jsp/searchProductResults.jsp" />
+			<forward name="agenttool.search.add.basket.results" path="/html/jsp/searchProductAddBasketItem.jsp" />
+			<forward name="agenttool.login.view" path="agenttools.login" />
+			<forward name="agenttool.product.detail.show"  path="agenttools.productDetail" />
+		</action>
+			
+		<action path="/doStartPage" type="com.dell.enterprise.agenttool.actions.StartPage" >
+		<forward name="agenttools.defaultpage" path="agenttools.defaultpage"></forward>
+		</action>
+		
+		<action 
+			path="/cust_lookup"  validate="false"
+			input="agenttools.cust_lookup"
+			type="com.dell.enterprise.agenttool.actions.CustomerLookup"
+			parameter="method">
+			<forward name="agenttool.customerLookup" path="agenttools.customerLookup" />
+			<forward name="agenttool.customerLookup.result" path="/html/jsp/cust_results.jsp" />
+			<forward name="agenttool.login.view" path="agenttools.login" />
+			<forward name="error.page.view" path="/error.jsp" /> 			
+		</action>
+		
+		<action 
+			path="/shopper"  validate="false"
+			input="agenttools.shopper"
+			type="com.dell.enterprise.agenttool.actions.Shopper"
+			parameter="method">
+			
+			<forward name="agenttool.shopper" path="agenttools.shopper" />
+			<forward name="agenttool.shopper.result" path="/html/jsp/cust_results.jsp" />
+			<forward name="agenttool.login.view" path="agenttools.login" />
+			<forward name="agenttools.checkout.show" path="agenttools.checkout.show" />
+			<forward name="agenttools.checkout2.show" path="agenttools.checkout2.show" />
+			<forward name="agenttool.shopper.errors.result" path="/html/jsp/errors_result.jsp" />
+			<forward name="agenttool.shopper.cust_lookup" path="agenttools.customerLookup" />			
+			<forward name="error.page.view" path="/html/error.jsp" />
+			 <forward name="agenttool.login.success" path="agenttools.defaultpage" />		 	
+		</action>
+		
+		<action 
+			path="/agent_setup"  validate="false"
+			input="agenttools.agentSetup"
+			type="com.dell.enterprise.agenttool.actions.AgentSetup"
+			parameter="method"
+			scope="request">
+			
+			<forward name="agenttool.agentSetup" path="agenttools.agentSetup" />
+			<forward name="agenttool.agentSetup.result" path="/html/jsp/agent_results.jsp" />
+			<forward name="agenttool.agentSetup.manage" path="/html/jsp/agent_manage.jsp" />			
+			<forward name="agenttool.shopper.errors.result" path="/html/jsp/errors_result.jsp" />
+			<forward name="agenttool.agent.edit" path="/html/jsp/agent_edit.jsp" />
+			<forward name="agenttool.agent.new" path="/html/jsp/agent_new.jsp" />		
+			<forward name="error.page.view" path="/error.jsp" />
+			<forward name="agenttool.login.view" path="agenttools.login" />
+			<forward name="agenttool.login.success" path="agenttools.defaultpage" />		 	
+		</action>
+		
+		
+		<action path="/order_db" validate="false"
+			input="agenttools.order_db"
+			type="com.dell.enterprise.agenttool.actions.OrderManager"
+			parameter="method">	
+			<forward name="agenttools.order_manager" path="agenttools.order_manager"></forward>
+			<forward name="agenttools.order_list" path="agenttools.order_db"/>
+			<forward name="agenttools.order_by_agent_list" path="agenttools.order_by_agent_list"/>		
+			<forward name="agenttools.order_db" path="agenttools.order_db"/>
+			<forward name="agenttools.order_db.result" path="/html/jsp/order_result.jsp"/>
+			<forward name="agenttools.order_db.customer.result" path="order_db.customer.result"/>
+			<forward name="agenttools.order_db.customer" path="/html/jsp/order_customer_result.jsp"/>
+			<forward name="agenttools.order_db.held" path="agenttools.order_db.held"/>
+			<forward name="agenttools.order_db.held.customer" path="agenttools.order_db.held.customer"/>
+			<forward name="agenttools.order_db.held.customer.second" path="/html/jsp/customer_held_list.jsp"/>					
+			<forward name="agenttools.order_db.held.result" path="/html/jsp/order_held_list.jsp"/>
+			<forward name="agenttools.order_db.held.agent" path="agenttools.order_db.held.agent"/>	
+			<forward name="agenttools.order_db.held.agent.result" path="/html/jsp/order_held_list_agent.jsp"/>	
+			<forward name="agenttools.list_order_pending_db" path="agenttools.list_order_pending_db"/>
+			<forward name="agenttools.order_db.list.discount" path="agenttools.order_db.list.discount"/>			
+			 <forward name="agenttools.order_db.shopper" path="agenttools.order_db_shopper"/>			
+			<forward name="agenttools.order_db.shopper.result" path="/html/jsp/order_shopper_result.jsp"/>						
+			<forward name="agenttools.order_db.date" path="agenttools.order_db.date"></forward>
+			<forward name="agenttools.view.creadit.report.order" path="agenttools.view.creadit.report.order"/>
+			<forward name="agenttools.view.inventory.report.order" path="agenttools.view.inventory.report.order"/>
+			<forward name="agenttools.view.asset.report.order" path="agenttools.view.asset.report.order"/>
+			<forward name="agenttools.search.creadit.report.order" path="/html/jsp/search_creadit_report_result_order.jsp"/>
+			<forward name="agenttools.search.inventory.report.order" path="/html/jsp/search_inventory_report_result_order.jsp"/>
+			<forward name="agenttools.search.asset.report.order" path="/html/jsp/search_asset_report_result_order.jsp"/>
+			<forward name="agenttools.forward.agent.report" path="agenttools.forward.agent.report"/>
+			<forward name="agenttools.show.processor.agent.report" path="/html/jsp/show_processor.jsp"/>
+			<forward name="agenttools.show.model.agent.report" path="/html/jsp/showmodel.jsp"/>
+			<forward name="agenttools.show.agent.report.order" path="/html/jsp/showreport.jsp"/>
+			<forward name="agenttools.order_db.date.year" path="/html/jsp/order_year.jsp"/>
+			<forward name="agenttools.order_db.date.month" path="/html/jsp/order_month.jsp"/>		
+			<forward name="agenttools.order_db.date.day" path="/html/jsp/order_day.jsp"/>				
+			<forward name="agenttools.order.pending" path="agenttools.order.pending"/>
+			<forward name="agenttools.order_db.agents" path="agenttools.order_db.agents"/>
+			<forward name="agenttools.order_db.agents.result" path="/html/jsp/order_agents_result.jsp" />
+			<forward name="agenttools.agents.order" path="agenttools.agents.order.result.bydate"></forward>	
+			<forward name="agenttools.agents.order.shopper" path="agenttools.agents.order.shopper"></forward>								
+			<forward name="agenttools.order.pending.search" path="agenttools.order.pending.search"/>
+			<forward name="agenttools.agents.order.shopper.ajax" path="/html/jsp/order_by_shopper.jsp"></forward>
+			<forward name="agenttools.list_order_pending_db.more" path="/html/jsp/resultListPendingPaging.jsp"></forward>
+			<forward name="agenttools.export.exel.creadit.report.order" path="/html/jsp/exportExcel.jsp"></forward>
+			<forward name="agenttools.export.exel.asset.report.order" path="/html/jsp/exportExcel.jsp"></forward>
+			<forward name="agenttools.export.exel.inventory.report.order" path="/html/jsp/exportExcel.jsp"></forward>
+			<forward name="agenttools.order_db.customer.outsite" path="agenttools.order_db.customer.outsite"></forward>		
+			<forward name="agenttools.order_db.customer.outsite.page" path="/html/jsp/order_customer_result_outsite.jsp"/>
+			<forward name="agenttools.agents.order.paging" path="/html/jsp/order_agent.jsp"></forward>		
+		</action>
+     
+        <action 
+            path="/authenticate"
+            validate="false"
+            input="agenttools.authenticate"
+            type="com.dell.enterprise.agenttool.actions.Authentication"
+            parameter="method">
+            
+            <forward name="agenttool.login.view" path="agenttools.authenticate" />
+            <forward name="agenttool.login.success" path="agenttools.defaultpage" />
+            <forward name="agenttool.login.failure" path="agenttools.authenticate" />
+            <forward name="agenttool.shopper_view" path="agenttool.shopper_view"/>
+            <forward name="agenttools.checkout.show" path="agenttools.checkout.show"/>
+            <forward name="agenttool.shopper" path="agenttools.shopper" />
+            <forward name="login" redirect="true" path="/authenticate.do"/>
+          </action>
+        
+        <action 
+            path="/login"
+            validate="false"
+            input="agenttools.login"
+            type="com.dell.enterprise.agenttool.actions.CustomerLogin"
+            parameter="method">
+            
+            <forward name="agenttool.login.view" path="agenttools.login" />
+            <forward name="agenttool.login.success" path="agenttools.defaultpage" />
+            <forward name="agenttool.login.failure" path="agenttools.login" />
+        </action>
+        
+         <action 
+            path="/footer"
+            validate="false"
+            input="agenttools.login"
+            type="com.dell.enterprise.agenttool.actions.LinkFooter"
+            parameter="method">            
+            <forward name="agenttools.link.footer.default" path="agenttools.link.footer.default" />
+            <forward name="agenttools.link.footer.default1" path="agenttools.link.footer.default1" />
+             <forward name="agenttools.link.footer.default2" path="agenttools.link.footer.default2" />       
+          
+        </action>
+        <action 
+            path="/shopper_manager"
+            type="com.dell.enterprise.agenttool.actions.ShopperManager"
+            parameter="method">
+            
+            <forward name="agenttool.shopper_manager" path="agenttool.shopper_manager" />
+            <forward name="agenttool.shopper_view" path="agenttool.shopper_view" />
+            <forward name="agenttools.shopper.view.receipts" path="agenttools.shopper.view.receipts" />	
+            <forward name="agenttools.shopper.view.basket" path="agenttools.shopper.view.basket" />	
+            <forward name="agenttools.shopper.set.expriration.date" path="/html/jsp/resultSetExpiration.jsp" />
+            <forward name="agenttools.shopper.add.note" path="agenttools.shopper.add.note" />	
+            <forward name="shopper.add.note.success" path="/html/jsp/addNoteSuccess.jsp" />		
+            <forward name="agenttools.shopper.view.note" path="agenttools.shopper.view.note" />	
+            <forward name="agenttools.shopper.edit.expiration" path="agenttools.shopper.edit.expiration" />
+            <forward name="shopper.paging.agent.info.notes" path="/html/jsp/resultPagingNotes.jsp" />			
+            <forward name="shopper.paging.agent.info.more.notes" path="/html/jsp/resultPagingMoreNotes.jsp" />
+           <forward name="agenttools.shopper.view.receipts.paging" path="/html/jsp/resultPagingReceipts.jsp" />            
+        </action>
+        
+        <action 
+            path="/shopper_list"
+            type="com.dell.enterprise.agenttool.actions.ShopperList"
+            parameter="method"> 
+            
+            <forward name="agenttools.shopper_list" path="agenttools.shopper_list" />
+            <forward name="agenttools.shopper_list.results" path="/html/jsp/shopper_list_results.jsp" />
+            <forward name="error.page.view" path="/html/error.jsp" />
+        </action>
+        
+        <action 
+            path="/new_shoppers"
+            validate="false"
+            type="com.dell.enterprise.agenttool.actions.NewShoppers"
+            parameter="method">
+			<forward name="agenttool.shopper_manager" path="agenttool.shopper_manager"/>
+            <forward name="agenttool.shopper_year.view" path="agenttools.shopper_year" />
+            <forward name="agenttool.shopper_month.view" path="agenttools.shopper_month" />
+            <forward name="agenttool.shopper_day.view" path="agenttools.shopper_day" />
+            <forward name="agenttool.shopper_year.results" path="/html/jsp/shopper_year_results.jsp" />
+            <forward name="agenttool.shopper_day.view.result" path="/html/jsp/shopper_day_result.jsp"/>
+        </action>
+        
+        <action 
+            path="/ship_report"
+            validate="false"
+            type="com.dell.enterprise.agenttool.actions.ShippingReports"
+            parameter="method">            
+            <forward name="agenttool.ship_report.view" path="agenttools.ship_report" />
+        	<forward name="agenttool.ship_report.result" path="/html/jsp/result_ship_report.jsp" />
+        	<forward name="error.page.view" path="/html/error.jsp" />   
+        	<forward name="agenttool.ship_report.export.exel" path="/html/jsp/exportExcel.jsp" />
+        </action>
+        
+        <action 
+            path="/shopper_epp_reports"
+            validate="false"
+            type="com.dell.enterprise.agenttool.actions.EPPReports"
+            parameter="method">            
+            <forward name="agenttool.shopper_epp_reports.view" path="agenttools.shopper_epp_reports" />
+            <forward name="agenttool.epp_report.result" path="/html/jsp/result_epp_report.jsp" />
+            <forward name="error.page.view" path="/html/error.jsp" />   
+            
+        </action>
+        
+         <action 
+            path="/showBasket"
+            validate="false"
+            type="com.dell.enterprise.agenttool.actions.Basket"
+            parameter="method">            
+            <forward name="agenttools.basket.show" path="agenttools.basket.view" />
+            <forward name="agenttool.login.view" path="agenttools.login" />
+        </action>
+        
+        
+         <action 
+            path="/checkout"
+            validate="false"
+            type="com.dell.enterprise.agenttool.actions.Checkout"
+            parameter="method"> 
+            <set-property property="secure" value="true"/>           
+            <forward name="agenttools.checkout.show" path="agenttools.checkout.show" />
+            <forward name="agenttools.checkout2.show" path="agenttools.checkout2.show" />
+            <forward name="agenttool.login.view" path="agenttools.login" />
+        </action>
+        
+        <action 
+            path="/checkout2"
+            validate="false"
+            type="com.dell.enterprise.agenttool.actions.Checkout2"
+            parameter="method"> 
+            <set-property property="secure" value="true"/>           
+            <forward name="agenttools.checkout2.show" path="agenttools.checkout2.show" />
+            <forward name="agenttools.checkout3.show" path="agenttools.checkout3.show" />
+            <forward name="agenttool.login.view" path="agenttools.login" />
+        </action>
+        
+        
+          <action 
+            path="/checkout3"
+            validate="false"
+            type="com.dell.enterprise.agenttool.actions.Checkout3"
+            parameter="method"> 
+            <set-property property="secure" value="true"/>           
+            <forward name="agenttools.checkout3.show" path="agenttools.checkout3.show" />
+            <forward name="agenttools.checkout.final.show" path="agenttools.checkout.final.show" />
+            <forward name="agenttool.login.success" path="agenttools.defaultpage" />
+            <forward name="agenttools.print.order.show" path="agenttools.print.order.show" />
+            <forward name="agenttool.login.view" path="agenttools.login" />
+            <forward name="agenttools.csc.show" path="agenttools.csc.show" />
+            <forward name="agenttools.checkout3.exportExcel" path="/html/jsp/exportExcel.jsp" />
+        </action>
+        <action path="/exportOrder" validate="false" type="com.dell.enterprise.agenttool.actions.OrderManagerExport" parameter="method">
+        
+        </action>
+    
+        
+	</action-mappings>
+
+	<!-- ===================================== Controller Configuration -->
+	<!-- org.apache.struts.tiles.TilesRequestProcessor -->
+	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+	<!-- ================================ Message Resources Definitions -->
+	<!--    <message-resources parameter="resources.application"/> -->
+	<message-resources parameter="com.dell.enterprise.agenttool.resources.messages"
+		null="false" />
+
+	<!--
+		====================================Tiles Plug Ins Configuration
+	-->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+		<set-property property="definitions-parser-validate"
+			value="true" />
+	</plug-in>
+
+	<plug-in className="org.apache.struts.action.SecurePlugIn">
+		<set-property property="httpPort" value="8080" />
+		<set-property property="httpsPort" value="8443" />
+		<set-property property="enable" value="true" />
+		<set-property property="addSession" value="true" />
+	</plug-in>
+
+	<!--
+		<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+		value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+		</plug-in>
+	-->
+</struts-config>

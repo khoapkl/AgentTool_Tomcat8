@@ -1,0 +1,192 @@
+#wrapper_change {
+	margin: 0 auto;
+}
+#logo_change {
+	width: 400px;
+	margin:20px auto;
+	text-align: center;
+}
+
+#container_change, #container_login {
+	width: 400px;
+	background: #fff;
+	border: 1px solid #d4d4d4;
+	margin: 10px auto;
+	position: relative;
+	box-shadow: 1px 1px 1px #E9E3E3;
+	-moz-box-shadow: 1px 1px 1px #E9E3E3;
+	-webkit-box-shadow: 1px 1px 1px #E9E3E3;
+	text-sha dow: 0px 1px 0px #333;
+	padding-bottom:10px;
+	
+}
+
+#container_change h1, #container_login h1 {
+	margin-top: 20px;
+	background: #0264C6;
+	padding: 8px 20px;
+	margin-left: -8px;
+	color: #fff;
+	font-size: 16px;
+	font-family: UTM Avo;
+	position: relative;
+	box-shadow: 1px 1px 1px #292929;
+	-moz-box-shadow: 1px 1px 1px #292929;
+	-webkit-box-shadow: 1px 1px 1px #292929;
+	text-sha dow: 0px 1px 0px #333;
+}
+
+.arrow {
+	width: 0;
+	height: 0;
+	line-height: 0;
+	border-left: 8px solid transparent;
+	border-top: 9px solid #0264C6;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+}
+
+.arrow1 {
+	width: 0;
+	height: 0;
+	line-height: 0;
+	border-left: 8px solid transparent;
+	border-bottom: 9px solid #0264C6;
+	position: absolute;
+	top: -8px;
+	left: 0px;
+}
+
+#container_change form,#container_login form {
+	margin: 20px 20px 0px 20px;
+	text-align: center;
+}
+
+#container_change div#message {
+	
+	}
+	
+.text-center {
+	text-align: center;
+}
+
+.error-message{
+	color: red;
+}
+.warning-message{
+	color: #FF8800 !important;
+}
+
+#container_change div#message img {
+	/*text-align: left;*/
+	float: left;
+}
+
+#container_change div#message span {
+	margin-left:4px;
+	line-height: 18px;
+	
+}
+#container_change div#message div.message-top {
+	/*text-align: left;*/
+	display: inline-block;
+}
+
+
+#container_change div#message ul {
+	padding-left: 74px;
+}
+#container_change div#message ul li {
+	padding:5px;
+	text-align: left;
+}
+
+#container_change div#title {
+	padding: 20px 0px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#container_change form div#success {
+	border: 1px solid green;
+	color: green;
+	padding: 5px;
+	width: 170px;
+	margin-bottom: 10px;
+	display: none;
+}
+
+#container_change form div#error {
+	border: 1px solid red;
+	color: #333;
+	padding: 5px;
+	width: 200px;
+	margin-bottom: 10px;
+	display: none;
+}
+
+#container_change form p, #container_login form p {
+	padding-bottom: 1px;
+	text-align: left;
+}
+
+#container_change form input.input_text, #container_login form input.input_text {
+	width: 280px;
+	height: 40px;
+    font-size: 16px;
+    color: #999;
+    padding: 6px;
+    -moz-box-shadow:inset 0px 19px 20px #F3F3F3;
+    box-shadow:inset 0px 19px 20px #F3F3F3;
+    border: 1px solid #EBE6E6;
+    border-radius: 3px;
+    background:none;
+    
+}
+#container_change form input.input_text:focus, #container_login form input.input_text:focus {
+	background: #f3f3f3;
+}
+#container_change .input_bt, #container_login .input_bt {
+	font-weight: bold;
+	background: gray;
+	color: white;
+	padding: 5px 30px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px #292929;
+	-moz-box-shadow: 1px 1px 1px #292929;
+	-webkit-box-shadow: 1px 1px 1px #292929;
+	text-shadow: 0px 1px 0px #333;
+	height: 33px;
+	
+}
+
+#container_change .input_bt:hover, #container_login .input_bt:hover {
+	font-weight: bold;
+	background: #0264C6;
+	color: white;
+	padding: 5px 30px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	height: 33px;
+	
+}
+#container_change form div.warning {
+	border: 1px solid #777;
+	padding: 5px;
+	width: 200px;
+	color: red;
+	display: none;
+}
+
+#container_change form img {
+	margin: 0px 10px;
+	border: 1px solid #A7A6AA;
+}
+
+#container_login form p.mid {
+	border-bottom: 1px dashed #ccc;
+}

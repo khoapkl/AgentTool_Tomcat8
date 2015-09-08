@@ -1,0 +1,144 @@
+/*
+	style form login and change password IE9
+*/
+
+#wrapper_login, #wrapper_change{
+	margin: 0 auto;
+	text-align: center;
+}
+
+#container_login h1,#container_change h1 {
+	margin-top: 20px;
+	background: #0264C6;
+	padding: 8px 20px;
+	margin-left: -8px;
+	color: #fff;
+	font-size: 16px;
+	font-family: UTM Avo;
+	position: relative;
+	box-shadow: 1px 1px 1px #292929;
+	-moz-box-shadow: 1px 1px 1px #292929;
+	-webkit-box-shadow: 1px 1px 1px #292929;
+	text-sha dow: 0px 1px 0px #333;
+	text-align: left;
+}
+#container_login .input_bt, #container_change .input_bt {
+	margin-right: 0px;
+	display:inline-block;
+	font-weight: bold;
+	background: gray;
+	color: white;
+	padding: 5px 15px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px #292929;
+	-moz-box-shadow: 1px 1px 1px #292929;
+	-webkit-box-shadow: 1px 1px 1px #292929;
+	text-shadow: 0px 1px 0px #333;
+	height: 33px;
+
+}
+#container_change form input.input_text, #container_login form input.input_text {
+	padding: 0px 6px;
+	line-height: 40px;
+	filter:
+  		progid:DXImageTransform.Microsoft.gradient(startColorstr=#21000000,endColorstr=#01000000);
+}
+#container_change form input.input_text:focus, #container_login form input.input_text:focus {
+	background: red;
+}
+
+.hover {
+	background: #0264C6;
+	cursor: pointer;
+}
+
+#container_login form p{
+	padding: 0px;
+}
+
+
+#container_change form p{
+	padding: 0px;
+}
+
+#container_change form p.bt_login{
+	text-align: center;
+}
+
+#container_change div#message ul {
+	padding-left: 32px;
+}
+#container_change div#message ul li {
+	padding:5px;
+	text-align: left;
+}
+
+.arrow {
+	left : 0px;
+	top : 96%;
+}
+.arrow1 {
+	left : -1px;
+	top : -8px;
+}
+
+
+#container_login h1, #container_change h1{
+	display: inline-block;
+}
+
+
+#container_change div#message img{
+	float: none;
+	display: inline-block;
+	position: absolute;
+}
+
+#container_change div#message span{
+	top: 0px;
+	position: relative;
+	height: 100%;
+	margin-left: 20px;
+}
+
+
+/*
+	style form security setting on IE9
+*/
+
+.float-left {
+	float: none;
+	vertical-align: middle;
+}
+
+.spinner1{
+	background: #F9F9F9;
+	border-radius: 3px;
+	padding: 4px 2px 2px 2px;
+	border: 1px solid #dddddd;
+	display: inline-block;
+	height: 100%;
+	position: relative;
+	top: 5px;
+}
+
+
+.lockout-time{
+	background: #F9F9F9;
+	border-radius: 3px;
+	padding: 8px 2px 2px 2px;
+	border: 1px solid #dddddd;
+	display: inline-block;
+	position: relative;
+
+}
+
+.wrap-expiry-day{
+	height: 25px;
+	vertical-align: middle;
+}
+#security_wrapper #security_content .input_bt {
+	padding: 5px 20px;
+}

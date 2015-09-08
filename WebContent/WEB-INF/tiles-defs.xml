@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="agenttools.layout" path="/html/template.jsp">
+		<put name="header" value="/html/default-header.jsp" />
+		<put name="menu" value="/html/default-menu.jsp" />
+		<put name="title" value="" />
+		<put name="body" value="" />
+		<put name="footer" value="/html/default-footer.jsp" />
+	</definition>
+	<definition name="agenttools.securitySetup" extends="agenttools.layout">
+		<put name="body" value="/html/jsp/security_setup.jsp" />
+	</definition>
+	
+	<definition name="agenttools.changePassword" extends="agenttools.layout">
+		<put name="menu" value="" />
+		<put name="title" value="" />
+		<put name="body" value="/html/jsp/change_password.jsp" />
+		<put name="footer" value="" />
+	</definition>
+	
+	<definition name="agenttools.order" path="/html/template.jsp">
+		<put name="header" value="/html/default-header.jsp" />
+		<put name="menu" value="/html/order-menu.jsp" />
+		<put name="title" value="/html/default-title.jsp" />
+		<put name="body" value="" />
+		<put name="footer" value="" />
+	</definition>
+	
+	<definition name="agenttools.note" path="/html/template.jsp">
+		<put name="header" value="/html/default-header.jsp" />
+		<put name="menu" value="/html/order-menu-note.jsp" />
+		<put name="title" value="/html/default-title.jsp" />
+		<put name="body" value="" />
+		<put name="footer" value="" />
+	</definition>
+	
+	<definition name="agenttools.shop" path="/html/template.jsp">
+		<put name="header" value="/html/default-header.jsp" />
+		<put name="menu" value="/html/order-menu.jsp" />
+		<put name="title" value="/html/default-title.jsp" />
+		<put name="body" value="" />
+		<put name="footer" value="" />
+	</definition>
+
+	<definition name="agenttools.simple" path="/html/template.jsp">
+		<put name="header" value="/html/header_simple.jsp" />
+		<put name="title" value="" />
+		<put name="menu" value="" />
+		<put name="body" value="" />
+		<put name="footer" value="/html/footer_simple.jsp" />
+	</definition>
+	
+	<definition name="agenttools.productDetail" extends="agenttools.simple">
+		<put name="body" value="/html/jsp/productDetail.jsp" />
+	</definition>
+	
+	<definition name="agenttools.layout.ajax" path="/html/ajax.jsp">
+		<put name="body" value="" />
+	</definition>
+
+	<definition name="agenttools.defaultpage" extends="agenttools.layout">
+		<put name="title" value="" />
+		<put name="body" value="/html/jsp/default-page.jsp" />
+	</definition>
+	
+
+	<definition name="agenttools.link.footer.default" extends="agenttools.layout">
+	 	<put name="title" value="" />
+        <put name="body" value="/html/jsp/terms_sale.jsp" /> 
+       
+    </definition>
+    
+    <definition name="agenttools.agents.order.result.bydate" extends="agenttools.order">
+        <put name="body" value="/html/jsp/order_agent.jsp" /> 
+    </definition>
+    
+	<definition name="agenttools.link.footer.default1" extends="agenttools.layout">
+	 	<put name="title" value="" />
+        <put name="body" value="/html/jsp/terms_use.jsp" />        
+    </definition>
+    <definition name="agenttools.link.footer.default2" extends="agenttools.layout">
+	 	<put name="title" value="" />
+        <put name="body" value="/html/jsp/privacy.jsp" />        
+    </definition>
+    
+	<definition name="agenttools.searchProduct" extends="agenttools.layout">
+		<put name="body" value="/html/jsp/searchProduct.jsp" />
+	</definition>
+
+	<definition name="agenttools.customerLookup" extends="agenttools.layout">
+		<put name="body" value="/html/jsp/cust_lookup.jsp" />
+	</definition>
+
+	<definition name="agenttools.shopper" extends="agenttools.layout">
+		<put name="body" value="/html/jsp/shopper.jsp" />
+	</definition>
+	
+	<definition name="agenttools.agentSetup" extends="agenttools.layout">
+		<put name="body" value="/html/jsp/agent_setup.jsp" />
+	</definition>
+
+	<definition name="agenttools.authenticate" extends="agenttools.layout">
+		<put name="menu" value="" />
+		<put name="title" value="" />
+		<put name="body" value="/html/jsp/authenticate.jsp" />
+		<put name="footer" value="" />
+	</definition>
+	
+	<definition name="agenttools.login" extends="agenttools.layout">
+		<put name="menu" value="" />
+		<put name="title" value="" />
+		<put name="body" value="/html/jsp/login.jsp" />
+		<put name="footer" value="" />
+	</definition>
+
+	<definition name="agenttool.shopper_manager" extends="agenttools.shop">
+		<put name="body" value="/html/jsp/shopper_manager.jsp" />
+	</definition>
+
+	<definition name="agenttools.shopper_list" extends="agenttools.shop">
+		<put name="body" value="/html/jsp/shopper_list.jsp" />
+	</definition>
+
+	<definition name="agenttools.order_db" extends="agenttools.order">
+		<put name="body" value="/html/jsp/order_list.jsp" />
+	</definition>
+
+	<definition name="agenttools.shopper_year" extends="agenttools.shop">
+		<put name="body" value="/html/jsp/shopper_year.jsp" />
+	</definition>
+	
+	<definition name="agenttools.shopper_month" extends="agenttools.shop">
+        <put name="body" value="/html/jsp/shopper_month.jsp" />
+    </definition>
+    
+    <definition name="agenttools.shopper_day" extends="agenttools.shop">
+        <put name="body" value="/html/jsp/shopper_day.jsp" />
+    </definition>
+
+	<definition name="agenttools.ship_report" extends="agenttools.order">
+		<put name="body" value="/html/jsp/ship_report.jsp" />
+	</definition>
+
+	<definition name="agenttools.shopper_epp_reports" extends="agenttools.order">
+		<put name="body" value="/html/jsp/shopper_epp_reports.jsp" />
+	</definition>
+    
+    <definition name="agenttools.order_db.held" extends="agenttools.order">
+        <put name="body" value="/html/jsp/order_held_list.jsp" />
+    </definition>
+    
+    <definition name="agenttools.order_db.held.customer" extends="agenttools.order">
+        <put name="body" value="/html/jsp/customer_held_list.jsp" />
+    </definition>
+    
+    <definition name="agenttools.order_db.held.agent" extends="agenttools.order">
+        <put name="body" value="/html/jsp/order_held_list_agent.jsp" />
+    </definition>
+    
+    <definition name="agenttools.list_order_pending_db" extends="agenttools.order">
+		<put name="body" value="/html/jsp/order_pending_list.jsp" />
+	</definition>
+	
+	<definition name="agenttools.order_db_shopper" extends="agenttools.order">
+    	<put name="body" value="/html/jsp/order_shopper.jsp" />
+    </definition>
+    
+	<definition name="agenttools.order_manager" extends="agenttools.order">
+     <put name="body" value="/html/jsp/order.jsp" />
+    </definition>
+    
+    <definition name="agenttool.shopper_view" extends="agenttools.order">
+     <put name="body" value="/html/jsp/shopper_view.jsp" />
+    </definition>
+    
+    <definition name="agenttools.basket.view" extends="agenttools.layout">
+     <put name="body" value="/html/jsp/viewBasket.jsp" />
+    </definition>
+    
+   	
+   	<definition name="agenttools.order_db.date" extends="agenttools.order">
+     <put name="body" value="/html/jsp/order_date.jsp" />
+    </definition>   
+    <definition name="agenttools.order_db.list.discount" extends="agenttools.order">
+     <put name="body" value="/html/jsp/discount_edit.jsp" />
+    </definition>   
+    <definition name="agenttools.view.creadit.report.order" extends="agenttools.order">
+    
+     <put name="body" value="/html/jsp/credit_report.jsp" />
+     
+    </definition>   
+    <definition name="agenttools.view.inventory.report.order" extends="agenttools.order">
+     <put name="body" value="/html/jsp/summary_inventory_report.jsp" />
+    </definition>  
+    <definition name="agenttools.view.asset.report.order" extends="agenttools.order">
+     <put name="body" value="/html/jsp/asset_report.jsp" />
+    </definition> 
+    <definition name="agenttools.forward.agent.report" extends="agenttools.order">
+     <put name="body" value="/html/jsp/agent_report.jsp" />
+    </definition>  
+     
+     <definition name="agenttools.checkout.show" extends="agenttools.layout">
+     	<put name="body" value="/html/jsp/checkout.jsp" />
+    </definition> 
+    <definition name="agenttools.checkout2.show" extends="agenttools.layout">
+     	<put name="body" value="/html/jsp/checkout2.jsp" />
+    </definition> 
+      <definition name="agenttools.order.pending" extends="agenttools.order">
+      <put name="menu" value="/html/jsp/order-default-menu-two.jsp" />   
+     <put name="body" value="/html/jsp/order_view_pending.jsp" />
+    </definition> 
+    
+     <definition name="agenttools.order.pending.search" extends="agenttools.order">
+      <put name="menu" value="/html/jsp/order-default-menu-two.jsp" />   
+      <put name="body" value="/html/jsp/order_view.jsp" />
+    </definition> 
+    
+    
+      <definition name="agenttools.order_db.agents" extends="agenttools.order">
+     <put name="body" value="/html/jsp/order_agents.jsp" />
+    </definition>    
+  
+      <definition name="agenttools.checkout3.show" extends="agenttools.layout">
+     	<put name="body" value="/html/jsp/checkout3.jsp" />
+    </definition>      
+   
+   <definition name="agenttools.agents.order.shopper" extends="agenttools.order">
+   <put name="body" value="/html/jsp/order_by_shopper.jsp" />
+   </definition>
+   
+    <definition name="agenttools.shopper.view.receipts" extends="agenttools.order">
+   <put name="body" value="/html/jsp/order_shopper_list.jsp" />
+   </definition>
+   
+   <definition name="agenttools.shopper.view.basket" extends="agenttools.order">
+   <put name="body" value="/html/jsp/basket_view.jsp" />
+   </definition>
+	<definition name="agenttools.checkout.final.show" extends="agenttools.layout">
+		<put name="body" value="/html/jsp/checkoutFinal.jsp" />
+	</definition>
+	<definition name="agenttools.print.order.show" extends="agenttools.simple">
+		<put name="body" value="/html/jsp/printOrder.jsp" />
+	</definition>
+	
+	<definition name="order_db.customer.result" extends="agenttools.order">
+		<put name="body" value="/html/jsp/order_customer_result.jsp" />
+	</definition>
+	<definition name="agenttools.order_db.customer.outsite" extends="agenttools.order">
+		<put name="body" value="/html/jsp/order_customer_result_outsite.jsp" />
+	</definition>
+	
+	<definition name="agenttools.csc.show" extends="agenttools.simple">
+		<put name="body" value="/html/jsp/csc_link.jsp" />
+	</definition>   
+	
+	<definition name="agenttools.shopper.add.note" extends="agenttools.note">
+		<put name="body" value="/html/jsp/shopper_note_add.jsp" />
+	</definition>   
+	
+	<definition name="agenttools.shopper.view.note" extends="agenttools.order">
+		<put name="body" value="/html/jsp/shopper_notes.jsp" />
+	</definition>   
+	
+	<definition name="agenttools.shopper.edit.expiration" extends="agenttools.order">
+		<put name="body" value="/html/jsp/shopper_commission.jsp" />
+	</definition>   
+</tiles-definitions>

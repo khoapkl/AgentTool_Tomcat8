@@ -1,0 +1,25 @@
+<!-- 
+<Context>
+  <Resource name="jdbc/AgentTool" auth="Container" type="javax.sql.DataSource"
+               maxActive="100" maxIdle="30" maxWait="10000"
+               username="dfs_test" password="dfs_test" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+               url="jdbc:sqlserver://199.227.245.15:1433;DatabaseName=Fulfill_DFS"/>
+</Context>
+-->
+
+<Context>
+  <Resource name="jdbc/AgentTool" auth="Container" type="javax.sql.DataSource"
+               maxActive="100" maxIdle="30" maxWait="10000"
+               username="sa" password="mr1server45" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+               url="jdbc:sqlserver://localhost:1433;DatabaseName=Fulfill_DFS"/>
+</Context>
+
+ 
+<!--
+<Context>
+  <Resource name="jdbc/AgentTool" auth="Container" type="javax.sql.DataSource"
+               maxActive="100" maxIdle="30" maxWait="10000"
+               username="sa" password="binhht" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+               url="jdbc:sqlserver://10.10.10.3\\SQLEXPRESS:1433;DatabaseName=dfs_tester_db"/>
+</Context>
+-->

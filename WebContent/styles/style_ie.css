@@ -1,0 +1,12 @@
+/*
+style css form security setting on IE10
+
+*/
+
+.float-left {
+	float: none;
+	}
+.space-checkbox{
+	top: -1.8px;
+	position: relative;
+}

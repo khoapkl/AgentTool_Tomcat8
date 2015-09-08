@@ -1,0 +1,282 @@
+body {
+	font-family: Arial, Helvetica;
+	font-size: 12px;
+}
+
+table tr td {
+	font-family: Arial, Helvetica;
+	font-size: 12px;
+}
+
+input,select {
+	font-family: Arial, Helvetica;
+	font-size: 12px;
+}
+
+.loginContainer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+}
+
+.main {
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 12px;
+	margin-left: 0;
+	margin-top: 0;
+}
+
+.tablers  tr:nth-child(even) {
+	background: #99ccff
+}
+
+.tablers tr:nth-child(odd) {
+	background: #cccccc
+}
+
+a {
+	text-decoration: none;
+}
+
+a:HOVER {
+	text-decoration: underline;
+}
+
+.hlt td {
+	background-color: yellow;
+	color: black;
+	cursor: default
+}
+
+#MenuTable {
+	margin: 0;
+	padding: 0;
+}
+
+#MenuTable td a {
+	padding: 0 1em;
+	font-family: 'Trebuchet MS', Trebuchet, Helvetica, sans-serif;
+	font-weight: 200;
+	font-size: 1.2em;
+	color: #0085c5 !important;
+	border-right: 1px solid #ccc;
+}
+
+#LastLink {
+	border-right: none !important;
+}
+
+#HeaderTable {
+	border-bottom: 1px dashed #ccc;
+	margin-bottom: 0.5em;
+	padding: 0.5em 0;
+	padding-bottom: 30px;
+}
+
+#ContentTR td {
+	padding: 0 0.5em;
+}
+
+#topTitle {
+	padding-right: 0.5em;
+	font-family: 'Trebuchet MS', Trebuchet, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 1.2em;
+	color: #0085c5;
+	display: block;
+}
+
+a {
+	color: #3399cc !important;
+}
+
+a:visited {
+	color: #A04264 !important;
+}
+
+#OrderTable a {
+	color: blue !important;
+}
+
+#OrderTable a:visited {
+	color: #A04264 !important;
+}/*
+	security settings form style
+*/#security_wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.spinner,.spinner1 {
+	text-align: center;
+}
+.spinner1 {
+	height: 24px;
+	background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+
+}
+.security_title {
+	padding: 7px;
+	padding-left: 20px;
+	background: #0085c5;
+	font-size: 16px;
+	font-weight: bold;
+	color: white !important;
+}
+
+#security_content {
+	padding-left: 20px;
+}
+
+.pad_left {
+	padding-left: 15px;
+}
+
+.secu_check {
+	padding-left: 65px;
+}
+
+#security_wrapper #security_content .input_bt {
+	font-weight: bold;
+	background: gray;
+	color: white;
+	padding: 5px 30px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px #292929;
+	-moz-box-shadow: 1px 1px 1px #292929;
+	-webkit-box-shadow: 1px 1px 1px #292929;
+	text-sha dow: 0px 1px 0px #333;
+	height: 30px;
+	margin-right: 20px;
+}
+
+#security_wrapper #security_content .input_bt:hover {
+	font-weight: bold;
+	background: #0264C6;
+	color: white;
+	padding: 5px 30px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	height: 30px;
+}
+
+.clear-margin {
+	margin: 0;
+}
+
+.float-left {
+	float: left;
+}
+
+.space-checkbox {
+	margin-left: 5px;
+}
+
+.input-time {
+	background: #F9F9F9;
+	border-radius: 3px;
+	padding: 2px;
+	border: 1px solid #dddddd;
+}
+
+/*Initialize menu logout hover*/
+
+ul#menu {
+	display: inline-block;
+	float: left;
+}
+
+ul#menu,ul#menu ul.sub-menu {
+	padding: 0;
+	margin: 0;
+}
+
+ul#menu li,ul#menu ul.sub-menu li {
+	list-style-type: none;
+	display: inline-block;
+}
+
+/*Link Appearance*/
+ul#menu li a,ul#menu li ul.sub-menu li a {
+	text-decoration: none;
+	color: #fff;
+	padding: 3px;
+	display: inline-block;
+}
+
+/*Make the parent of sub-menu relative*/
+
+ul#menu li {
+	position: relative;
+	width: 220px;
+}
+
+/*sub menu*/
+
+ul#menu li ul.sub-menu {
+	display: none;
+	position: absolute;
+	top: 24px;
+	left: 5px;
+}
+
+ul#menu li:hover ul.sub-menu {
+	display: block;
+}
+
+ul#menu li a {
+	padding: 0px;
+}
+
+.nounderline {
+	float: left;
+	padding: 5px 10px !important;
+}
+
+ul#menu li ul.sub-menu li a {
+	border-right: none;
+	float: left;
+}
+
+ul#menu li ul.sub-menu li a:hover{
+	text-decoration: underline!important;
+}
+
+ul#menu li ul.sub-menu li a:hover + #tooltip-changepwd{
+	display: block;
+}
+
+#tooltip-changepwd{
+	display: none;
+    left: 120px;
+    position: absolute;
+    top: 23px;
+    width: 220px;
+    border: 1px solid #DCA;
+	background: #fffAF0;
+	font-weight: bold;
+	text-align: center;
+	line-height: 16px;
+	padding: 5px;
+}
+
+
+a.tooltip-change {
+	outline: none;
+}
+
+a.tooltip-change strong {
+	line-height: 20px;
+	text-decoration: none;
+}
+
+a.tooltip-change:hover {
+	text-decoration: none!important;
+}
+
