@@ -541,7 +541,7 @@ public class CheckoutService
         String parmList = "";
         parmList = parmList + "TENDER=C";
         parmList = parmList + "&PWD=vncard1";
-        parmList = parmList + "&USER=vncardtest";
+        parmList = parmList + "&USER=vncard";
         parmList = parmList + "&VENDOR=mrifordfsdirect";
         parmList = parmList + "&PARTNER=Verisign";
         parmList = parmList + "&ACCT=" + orderHeader.getCc_number();

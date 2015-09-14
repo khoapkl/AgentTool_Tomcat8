@@ -10,8 +10,8 @@
 <Context>
   <Resource name="jdbc/AgentTool" auth="Container" type="javax.sql.DataSource"
           maxActive="100" maxIdle="30" maxWait="10000"
-          username="sa" password="tam-le1234" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-          url="jdbc:sqlserver://localhost:1433;DatabaseName=Fulfill_DFS_03202014"/>
+          username="dfs_test" password="dfs_test" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+          url="jdbc:sqlserver://localhost:1433;DatabaseName=Fulfill_DFS_dev"/>
 </Context>
 
  
